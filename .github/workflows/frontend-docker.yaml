@@ -6,7 +6,6 @@ on:
     paths:
       - 'microservices/frontend/**'
       - '.github/workflows/frontend-docker.yaml'
-    workflow_dispatch:
 jobs:
   build-docker-images:
     runs-on: ubuntu-latest
