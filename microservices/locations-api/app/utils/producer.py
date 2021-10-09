@@ -1,7 +1,7 @@
 import logging
 import json
 from kafka import KafkaProducer, errors
-from utils.configs import KAFKA_HOST_STRING, KAFKA_TOPIC
+from utils.configs import KAFKA_SERVICE, KAFKA_TOPIC
 
 logger = logging.getLogger(__name__)
 
@@ -22,7 +22,7 @@ class Kafka(object):
         if Kafka.conn is None:
             try:
                 Kafka.conn = KafkaProducer(
-                    bootstrap_servers=KAFKA_HOST_STRING,
+                    bootstrap_servers=KAFKA_SERVICE,
                     value_serializer=lambda m: json.dumps(m).encode('utf-8'),
                     retries=5)
                 Kafka.conn_count += 1
