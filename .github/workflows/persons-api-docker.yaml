@@ -51,18 +51,3 @@ jobs:
           
       - name: Show image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
-        
-      - name: Build and push docker image
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: microservices/persons-api
-          file: microservices/persons-api/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          builder: ${{ steps.buildx.outputs.name }}
-          # don't push during a pull_request, only build
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/persons-api:latest
-          push: ${{ github.event_name != 'pull_request' }}
-         
-      - name: Show image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}

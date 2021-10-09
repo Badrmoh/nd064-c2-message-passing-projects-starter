@@ -48,21 +48,6 @@ jobs:
           # don't push during a pull_request, only build
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ingest-consumer:latest
           push: ${{ github.event_name != 'pull_request' }}
-          
-      - name: Show image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
-        
-      - name: Build and push docker image
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: microservices/ingest-consumer
-          file: microservices/ingest-consumer/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
-          builder: ${{ steps.buildx.outputs.name }}
-          # don't push during a pull_request, only build
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/ingest-consumer:latest
-          push: ${{ github.event_name != 'pull_request' }}
          
       - name: Show image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

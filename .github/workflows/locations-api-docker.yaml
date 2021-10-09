@@ -1,11 +1,11 @@
-name: Postgres docker image
+name: Locations API docker image
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ master ]
     paths:
-      - 'microservices/postgres/**'
-      - '.github/workflows/postgres-postgis-docker.yaml'
+      - 'microservices/locations-api/**'
+      - '.github/workflows/locations-api-docker.yaml'
     workflow_dispatch:
 jobs:
   build-docker-images:
@@ -37,16 +37,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}  
             
-      - name: Build and push docker image
+      - name: Build push docker image
         id: docker_build
         uses: docker/build-push-action@v2
         with:
-          context: microservices/postgres
-          file: microservices/postgres/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/arm/v7
+          context: microservices/locations-api
+          file: microservices/locations-api/Dockerfile
+          platforms: linux/amd64
           builder: ${{ steps.buildx.outputs.name }}
           # don't push during a pull_request, only build
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/postgres-postgis:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/locations-api:latest
           push: ${{ github.event_name != 'pull_request' }}
           
       - name: Show image digest
