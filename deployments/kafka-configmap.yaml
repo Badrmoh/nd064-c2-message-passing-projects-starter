@@ -3,7 +3,7 @@ kind: ConfigMap
 data:
   KAFKA_ADVERTISED_HOST_NAME: "kafka"
   KAFKA_CREATE_TOPICS: "locations:1:1"
-  KAFKA_ZOOKEEPER_CONNECT: 'zookeeper'
+  KAFKA_ZOOKEEPER_CONNECT: "zookeeper"
   KAFKA_PORT: "9092"
   KAFKA_TOPIC: "locations"
 metadata:

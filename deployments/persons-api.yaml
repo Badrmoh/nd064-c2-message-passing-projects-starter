@@ -61,11 +61,12 @@ spec:
               name: db-env
               key: DB_PORT
       restartPolicy: Always
+      nodeSelector:
+        arch: armv7
        # Allow deployment to run on Raspberry pi 4
       tolerations:
       - key: "arch"
         operator: "Equal"
         value: "armv7"
         effect: "NoExecute"
-      nodeSelector:
-        arch: armv7
+

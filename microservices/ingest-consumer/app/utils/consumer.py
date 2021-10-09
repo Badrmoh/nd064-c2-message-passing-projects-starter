@@ -1,7 +1,7 @@
 import logging
 import json
 from kafka import KafkaConsumer, errors
-from utils.configs import KAFKA_HOST_STRING, KAFKA_TOPIC
+from utils.configs import KAFKA_SERVICE, KAFKA_TOPIC
 
 
 logger = logging.getLogger(__name__)
@@ -22,7 +22,7 @@ class Kafka(object):
     def __init__(self):
         if Kafka.conn is None:
             try:
-                Kafka.conn = KafkaConsumer(KAFKA_TOPIC,
+                Kafka.conn = KafkaConsumer(KAFKA_SERVICE,
                         value_deserializer=lambda m:
                         json.loads(m.decode('utf-8')),
                         bootstrap_servers=KAFKA_HOST_STRING)

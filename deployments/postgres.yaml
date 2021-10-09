@@ -81,13 +81,13 @@ spec:
             - mountPath: /var/lib/postgresql/data
               name: postgresdb
       # Allow deployment to run on Raspberry pi 4
+      nodeSelector:
+        arch: armv7
       tolerations:
       - key: "arch"
         operator: "Equal"
         value: "armv7"
         effect: "NoExecute"
-      nodeSelector:
-        arch: armv7
       volumes:
         - name: postgresdb
           persistentVolumeClaim:
