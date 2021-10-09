@@ -22,10 +22,10 @@ class Kafka(object):
     def __init__(self):
         if Kafka.conn is None:
             try:
-                Kafka.conn = KafkaConsumer(KAFKA_SERVICE,
+                Kafka.conn = KafkaConsumer(KAFKA_TOPIC,
                         value_deserializer=lambda m:
                         json.loads(m.decode('utf-8')),
-                        bootstrap_servers=KAFKA_HOST_STRING)
+                        bootstrap_servers=KAFKA_SERVICE)
                 Kafka.conn_count += 1
             except Exception:
                 logger.error("... Kafka is not available ...")
