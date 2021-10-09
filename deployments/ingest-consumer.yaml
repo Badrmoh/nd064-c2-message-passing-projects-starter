@@ -61,3 +61,5 @@ spec:
         operator: "Equal"
         value: "armv7"
         effect: "NoExecute"
+      nodeSelector:
+        arch: armv7

@@ -31,7 +31,7 @@ spec:
         service: udaconnect-app
     spec:
       containers:
-      - image: udacity/nd064-udaconnect-app:latest
+      - image: badrmoh/udaconnect-frontend:latest
         name: udaconnect-app
         imagePullPolicy: Always
         resources:
@@ -41,4 +41,18 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "256m"
+        env:
+        - name: REACT_APP_PERSONS_API_SRV
+          valueFrom:
+            configMapKeyRef:
+              name: fe-env
+              key: PERSONS_API_SRV
       restartPolicy: Always
+      # Allow deployment to run on Raspberry pi 4
+      tolerations:
+      - key: "arch"
+        operator: "Equal"
+        value: "armv7"
+        effect: "NoExecute"
+      nodeSelector:
+        arch: armv7
