@@ -1,6 +1,6 @@
 import psycopg2
 import logging
-from utils.configs import DB_PASSWORD, DB_USERNAME, DB_PORT, DB_HOST
+from utils.configs import DB_PASSWORD, DB_USERNAME, DB_PORT, DB_HOST, DB_NAME
 
 logger = logging.getLogger(__name__)
 
@@ -27,6 +27,7 @@ class DB(object):
                     host=DB_HOST,
                     user=DB_USERNAME,
                     port=DB_PORT,
+                    database=DB_NAME,
                     password=DB_PASSWORD)
                 DB.conn_count += 1
             except (Exception, psycopg2.DatabaseError) as error:
