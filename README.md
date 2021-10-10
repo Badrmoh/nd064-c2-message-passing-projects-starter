@@ -1,10 +1,10 @@
 # UdaConnect Microservices Project
 
-[![Build/Push Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/frontend-docker.yaml)
-[![Build/Push Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/ingest-consumer-docker.yaml)
-[![Build/Push Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/locations-api-docker.yaml)
-[![Build/Push Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/persons-api-docker.yaml)
-[![Build/Push Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/postgres-postgis-docker.yaml)
+[![Build/Push frontend Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/frontend-docker.yaml)
+[![Build/Push ingest-consumer Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/ingest-consumer-docker.yaml)
+[![Build/Push locations-api Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/locations-api-docker.yaml)
+[![Build/Push persons-api Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/persons-api-docker.yaml)
+[![Build/Push postgres Docker Images](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/docker.yml/badge.svg)](https://github.com/Badrmoh/kafka-prod-cons-demo/actions/workflows/postgres-postgis-docker.yaml)
 
 # Overview
 <a href="https://drive.google.com/uc?export=view&id=1H1Gr_h5yJ9WabgP9QEm33HLSYTm1UY6Z"><img src="https://drive.google.com/uc?export=view&id=1H1Gr_h5yJ9WabgP9QEm33HLSYTm1UY6Z" style="width: 650px; max-width: 100%; height: auto" title="Click to enlarge picture" />
