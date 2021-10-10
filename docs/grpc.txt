@@ -1,0 +1,24 @@
+-> locations-api microservice provides a gRPC API with two message definitions and two rpc services:
+
+A. Messages
+
+1. Location message fields
+id => string
+person_id => string
+longitude => string
+latitude => string
+creation_time => string
+
+2. LocationID message fields
+location_id => string
+
+
+B. Services
+
+1. Create
+It expects to have a Location message as an argument and it returns it as well for confirmation.
+
+2. Retrieve
+It expects to have a LocationID as an argument and it returns the corresponsing Location message.
+---
+Sample request is provided in microservice/locations-api/app/client.py script
