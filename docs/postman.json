@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "91c7175d-7cbe-4501-aec6-be7d36490bbe",
+		"name": "udaconnect",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/persons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/persons",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"persons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/persons",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Badr\",\n    \"last_name\": \"Ibrahim\",\n    \"company_name\": \"udacity\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{api_url}}/api/persons",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"persons"
+					]
+				},
+				"description": "Create a person entry"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/persons/{person_id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/persons/{{person_id}}",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"persons",
+						"{{person_id}}"
+					]
+				},
+				"description": "Get a person information with id"
+			},
+			"response": []
+		},
+		{
+			"name": "/api/persons/{person_id}/connection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{api_url}}/api/persons/{{person_id}}/connection?distance=4&end_date=2020-12-30&start_date=2020-01-01",
+					"host": [
+						"{{api_url}}"
+					],
+					"path": [
+						"api",
+						"persons",
+						"{{person_id}}",
+						"connection"
+					],
+					"query": [
+						{
+							"key": "distance",
+							"value": "4"
+						},
+						{
+							"key": "end_date",
+							"value": "2020-12-30"
+						},
+						{
+							"key": "start_date",
+							"value": "2020-01-01"
+						}
+					]
+				},
+				"description": "Get connections for a user in a vertain proximity and period of time."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "person_id",
+			"value": "5"
+		},
+		{
+			"key": "api_url",
+			"value": "http://k3snode.badr.local:30001"
+		}
+	]
+}
