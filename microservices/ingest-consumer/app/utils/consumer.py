@@ -7,8 +7,8 @@ from utils.configs import KAFKA_SERVICE, KAFKA_TOPIC
 logger = logging.getLogger(__name__)
 
 
+# A Singletone class for Kafka connection that always try to re-connect without re-instantiation
 class Kafka(object):
-    # A Singletone class
     conn = None
     conn_count = 0
 

@@ -34,3 +34,9 @@ sh scripts/run_db_command.sh $db_pod
 ```bash
 kubectl apply --recursive -f deplyments/
 ```
+
+# Testing gRPC API
+The `microservices/locations-api/app/client.py` script tries to perform gRPC API requests for all gRPC services
+1. open `microservices/locations-api/app/` in terminal
+2. Run `pip install grpcio`
+3. Run `SERVER=<k8s-node-address>:<locations-api-NodePort> python client.py`

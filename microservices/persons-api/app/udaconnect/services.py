@@ -80,7 +80,7 @@ class ConnectionService:
 
         return result
 
-
+# The location service is left for future functionalities considerations.
 class LocationService:
     @staticmethod
     def retrieve(location_id) -> Location:
@@ -94,7 +94,7 @@ class LocationService:
         location.wkt_shape = coord_text
         return location
 
-
+# Create/Retrieve a person entry in the database.
 class PersonService:
     @staticmethod
     def create(person: Dict) -> Person:

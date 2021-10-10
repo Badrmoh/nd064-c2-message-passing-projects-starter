@@ -4,6 +4,7 @@ from utils.database import DB
 logger = logging.getLogger(__name__)
 
 
+# A service to fetch locations from the DB
 class LocationService:
     @staticmethod
     def retrieve(location_id):

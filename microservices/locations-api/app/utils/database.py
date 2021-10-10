@@ -4,9 +4,8 @@ from utils.configs import DB_PASSWORD, DB_USERNAME, DB_PORT, DB_HOST, DB_NAME
 
 logger = logging.getLogger(__name__)
 
-
+# A Singletone class for database connection that always try to re-connect without re-instantiation
 class DB(object):
-    # A Singletone class
     conn = None
     conn_count = 0
 

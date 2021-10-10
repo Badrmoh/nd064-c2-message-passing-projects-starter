@@ -1,3 +1,4 @@
+# This Docker image can be built for armv7-based cpu architecture devices like rpi4
 ARG PGVERSION=${PGVERSION:-13}
 ARG POSTGIS_VERSION=${POSTGIS_VERSION:-3}
 FROM postgres:${PGVERSION}

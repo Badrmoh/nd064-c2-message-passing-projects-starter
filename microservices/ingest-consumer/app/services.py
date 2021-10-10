@@ -5,6 +5,7 @@ from utils.database import DB
 logger = logging.getLogger(__name__)
 
 
+# A Service to register new locations in the DB
 class LocationService:
     @staticmethod
     def create(request: Dict):
