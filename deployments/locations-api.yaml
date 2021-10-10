@@ -34,32 +34,15 @@ spec:
       - image: badrmoh/locations-api:latest
         name: locations-api
         imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: db-env
         env:
-        - name: DB_USERNAME
-          valueFrom:
-            configMapKeyRef:
-              name: db-env
-              key: DB_USERNAME
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: db-secret
               key: DB_PASSWORD
-        - name: DB_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: db-env
-              key: DB_NAME
-        - name: DB_HOST
-          valueFrom:
-            configMapKeyRef:
-              name: db-env
-              key: DB_HOST
-        - name: DB_PORT
-          valueFrom:
-            configMapKeyRef:
-              name: db-env
-              key: DB_PORT
         - name: KAFKA_SERVICE
           valueFrom:
             configMapKeyRef:

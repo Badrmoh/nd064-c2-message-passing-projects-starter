@@ -1,6 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  PERSONS_API_SRV: "pimaster01.fritz.box"
+  # Must be set!
+  # Use a cluster node address/host name with the NodePort exposed in the persons-api service manifest
+  PERSONS_API_SRV: "k3snode.badr.local:30001"
 metadata:
   name: fe-env

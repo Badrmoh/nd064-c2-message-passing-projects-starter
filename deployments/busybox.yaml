@@ -1,39 +1,43 @@
+# This deployment is used to confirm connectivity across the cluster
 apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: persons-api
-  name: persons-api
+    service: busybox
+  name: busybox
 spec:
   ports:
   - name: "5000"
     port: 5000
     targetPort: 5000
-    nodePort: 30001
   selector:
-    service: persons-api
-  type: NodePort
+    service: busybox
+  type: ClusterIP
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: persons-api
-  name: persons-api
+    service: busybox
+  name: busybox
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: persons-api
+      service: busybox
   template:
     metadata:
       labels:
-        service: persons-api
+        service: busybox
     spec:
       containers:
-      - image: badrmoh/persons-api:latest
-        name: persons-api
+      - image: radial/busyboxplus:curl
+      #- image: hypriot/armhf-busybox
+        name: busybox
         imagePullPolicy: Always
+        command:
+        - sleep
+        - "3600"
         envFrom:
         - configMapRef:
             name: db-env
@@ -52,4 +56,3 @@ spec:
       #   operator: "Equal"
       #   value: "armv7"
       #   effect: "NoExecute"
-

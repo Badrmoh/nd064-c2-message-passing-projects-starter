@@ -1,9 +1,8 @@
 apiVersion: v1
-kind: ConfigMap
 data:
-  KAFKA_ADVERTISED_HOST_NAME: "kafka"
+  KAFKA_ADVERTISED_HOST_NAME: "kafka-service"
   KAFKA_CREATE_TOPICS: "locations:1:1"
-  KAFKA_ZOOKEEPER_CONNECT: "zookeeper"
-  KAFKA_TOPIC: "locations"
+  KAFKA_ZOOKEEPER_CONNECT: 'zookeeper'
+kind: ConfigMap
 metadata:
   name: kafka-env

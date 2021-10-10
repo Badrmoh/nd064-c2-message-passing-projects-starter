@@ -50,12 +50,12 @@ spec:
               name: kafka-env
               key: KAFKA_ADVERTISED_HOST_NAME
       restartPolicy: Always
-      nodeSelector:
-        arch: armv7
-       # Allow deployment to run on Raspberry pi 4
-      tolerations:
-      - key: "arch"
-        operator: "Equal"
-        value: "armv7"
-        effect: "NoExecute"
+      # nodeSelector:
+      #   arch: armv7
+      #  # Allow deployment to run on Raspberry pi 4
+      # tolerations:
+      # - key: "arch"
+      #   operator: "Equal"
+      #   value: "armv7"
+      #   effect: "NoExecute"
 
